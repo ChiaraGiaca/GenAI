@@ -79,7 +79,7 @@ function TextToImagePage() {
 
     return <div  style = {{marginTop: "8%"}}>
         <ul>
-            <div>STABLE DIFFUSION 3</div>
+            <div>STABLE DIFFUSION 3 (2024)</div>
             <p style= {{fontSize: "12px"}}>
             </p>
             <div id="carousel-stable" class="carousel slide" data-ride="carousel">
