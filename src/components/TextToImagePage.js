@@ -22,6 +22,9 @@ import leonardo3 from './images/leonardo3.png'
 import krea1 from './images/krea1.png'
 import krea2 from './images/krea2.png'
 import krea3 from './images/krea3.png'
+import stable1 from './images/stable1.png'
+import stable2 from './images/stable2.png'
+import stable3 from './images/stable3.png'
 
 
 function TextToImagePage() {
@@ -79,6 +82,28 @@ function TextToImagePage() {
             <div>STABLE DIFFUSION 3</div>
             <p style= {{fontSize: "12px"}}>
             </p>
+            <div id="carousel-stable" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner-stable">
+                <div class="carousel-item active">
+                <img class="d-block w-90" src= {stable1} alt="First slide"style={{marginLeft:"auto",marginRight:"auto"}}/>
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-80" src={stable2} alt="Second slide" style={{marginLeft:"auto",marginRight:"auto"}}/>
+                </div>
+                <div class="carousel-item">
+                <img class="d-block w-80" src={stable3} alt="Third slide"style={{marginLeft:"auto",marginRight:"auto"}}/>
+                </div>
+            </div>
+            <a class="carousel-control-prev" id= "dalle-prev" href="#carousel-stable" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" id= "dalle-next" href="#carousel-stable" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            </div>
+            <br/>
             <Button onClick={handleClickOpenStable} style= {{color: "white", backgroundColor: yellow[600], fontWeight: "bold"}}>FIND OUT MORE</Button>
             <Dialog
                 open={openStable}
