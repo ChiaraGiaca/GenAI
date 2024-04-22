@@ -5,9 +5,7 @@ import Header from './components/Header'
 import Body from './components/Body'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import TextToImagePage from './components/TextToImagePage';
-import ImageToImagePage from './components/ImageToImagePage';
 import EvaluationPage from './components/EvaluationPage';
-import LetsPlayPage from './components/LetsPlayPage';
 import { useEffect } from 'react';
 
 function App() {
@@ -21,9 +19,7 @@ function App() {
       setNavbarComponent(<TextToImagePage />);
     } else if (currentPath === '/EvaluationPage') {
       setNavbarComponent(<EvaluationPage />);
-    } else {
-      setNavbarComponent(<LetsPlayPage />);
-    }
+    } 
  }, [navbarComponent, setNavbarComponent])
   
   return (
