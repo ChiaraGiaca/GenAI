@@ -8,10 +8,19 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
+
 import deliciousmeal from './images/deliciousmeal.PNG'
 import intelligentperson from './images/intelligentperson.PNG'
 import poorpeople from './images/poorpeople.PNG'
-
+import hands from './images/hands.PNG'
 
 export default function EvaluationPage() {
     const [prompt, setPrompt] = React.useState('');
@@ -33,7 +42,21 @@ export default function EvaluationPage() {
             setDesct(' DALLE3 and the STABLE DIFFUSION3 models weren’t able to depict a person, but rather preferred to show a more abstract vision of the meaning of the prompt. On the other hand, the KREA model depicted a man with glasses, that’s in line with the commonsense knowledge of humans (even if it’s influenced by the bias of men being more intelligent than women). The firefly and LEONARDO models were able to output both men and women pictures. Even in this case the Firefly model seems to outperform the outputs of the other models, depicting ealistic and true to reality images')
         }
       
+
     };
+
+    function createData(name, fidelty, details, aesthetics, control, api) {
+        return { name, fidelty, details, aesthetics, control, api };
+      }
+      
+      const rows = [
+        createData('DALLE3', ' Good fidelty but sometimes the model fails to generalize', 'Strong attention to details', 'Pictures have high aesthetic, especially the ones with intricate landscapes', 'None', 'Very easy to access with OPENAI Account'),
+        createData('ADOBE FIREFLY', ' The model struggles depicting groups of people in landscapes (it always focuses on human figures infrontof environments)', 'Very strong attention to details', 'Strong variety of styles', 'Many tools: image type, structure, styles', 'API available'),
+        createData('LEONARDO.AI', 'High fidelty and generalization', 'Strong attention to details', 'Many different styles', 'Many options: different models, input dimension, number of generated images', 'Available with the upgrade plan'),
+        createData('KREA.AI', 'Good fidelty', 'Little details', 'Sometimes a little too dark', 'High. The platform allows real time monitoring and customization of the output', 'Not available'),
+        createData('STABLE DIFFUSION 3', 'Strong fidelty', 'Really detailed outputs but just one per prompt', 'Good at generalization', 'None', 'Available on Fireworks.AI and Google Colab'),
+      ];
+      
 
   return (
     <div style = {{marginTop: "8%"}}>
@@ -46,8 +69,38 @@ export default function EvaluationPage() {
           Models comparison
         </AccordionSummary>
         <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+            <TableRow>
+                <TableCell  style ={{fontWeight: 'bold'}}>Model Name</TableCell>
+                <TableCell  align="right" style ={{fontWeight: 'bold'}}>Fidelty</TableCell>
+                <TableCell   align="right"style ={{fontWeight: 'bold'}}>Details</TableCell>
+                <TableCell  align="right" style ={{fontWeight: 'bold'}}>Aesthetics</TableCell>
+                <TableCell  align="right" style ={{fontWeight: 'bold'}}>Configurability and Control</TableCell>
+                <TableCell   align="right" style ={{fontWeight: 'bold'}}>API Integration</TableCell>
+            </TableRow>
+            </TableHead>
+            <TableBody>
+            {rows.map((row) => (
+                <TableRow
+                key={row.name}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                <TableCell component="th" scope="row">
+                    {row.name}
+                </TableCell>
+                <TableCell align="right">{row.fidelty}</TableCell>
+                <TableCell align="right">{row.details}</TableCell>
+                <TableCell align="right">{row.aesthetics}</TableCell>
+                <TableCell align="right">{row.control}</TableCell>
+                <TableCell align="right">{row.api}</TableCell>
+                </TableRow>
+            ))}
+            </TableBody>
+        </Table>
+        </TableContainer>
+
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -93,8 +146,16 @@ export default function EvaluationPage() {
           Are they able to generate hands effectively?
         </AccordionSummary>
         <AccordionDetails>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-          malesuada lacus ex, sit amet blandit leo lobortis eget.
+          Here are the results for the prompt: "A group of people with their hands in the sky"
+          <img src= {hands} style={{width: "60%", marginLeft: "20%", marginRight: "auto"}}>
+            
+            </img>
+            <div>
+            As can be noticed, all the models struggle with hand generation (most of the hands have less or
+ more fingers than normal or the generation is partially complete). The models that gave the best
+ results have been the LEONARDO and the STABLE DIFFUSION.
+            </div>
+           
         </AccordionDetails>
        
       </Accordion>
