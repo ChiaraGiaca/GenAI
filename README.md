@@ -1,11 +1,11 @@
-# GenAI 
+# GenAI - Research and Evaluation of Generative AI solutions
 
 ![image](https://github.com/ChiaraGiaca/GenAI/assets/77294126/7a332e15-ccd6-4489-a7aa-5213358e3442)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## How to run the app
 
 In the project directory, you can run:
 
