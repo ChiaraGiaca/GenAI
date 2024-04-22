@@ -111,7 +111,7 @@ function TextToImagePage() {
                 aria-labelledby="draggable-dialog-title-stable"
             >
             <DialogTitle id="draggable-dialog-stable">
-                Detailed Evaluation of IMAGEN
+                Explore STABLE DIFFUSION 3
             </DialogTitle>
             <DialogContent>
                 
@@ -121,7 +121,7 @@ function TextToImagePage() {
                 <Button autoFocus onClick={handleCloseStable}>
                 Cancel
                 </Button>
-                <Button onClick={handleCloseStable}>Subscribe</Button>
+                
             </DialogActions>
             </Dialog>
             <hr/>
@@ -166,7 +166,7 @@ function TextToImagePage() {
                 <Button autoFocus onClick={handleCloseDalle}>
                 Cancel
                 </Button>
-                <Button onClick={handleCloseDalle}>Subscribe</Button>
+                
             </DialogActions>
             </Dialog>
             <hr/>
@@ -212,7 +212,7 @@ function TextToImagePage() {
                 <Button autoFocus onClick={handleCloseAdobe}>
                 Cancel
                 </Button>
-                <Button onClick={handleCloseAdobe}>Subscribe</Button>
+               
             </DialogActions>
             </Dialog>
             </div>
@@ -297,20 +297,15 @@ function TextToImagePage() {
                 aria-labelledby="draggable-dialog-title-krea"
             >
             <DialogTitle id="draggable-dialog-title-krea">
-                Detailed Evaluation
+                Explore KREA.AI
             </DialogTitle>
             <DialogContent>
-                <DialogContentText>
-                To subscribe to this website, please enter your email address here. We
-                will send updates occasionally.
-                </DialogContentText>
-                <BasicTable></BasicTable>
+                <BasicTable name = 'krea'></BasicTable>
             </DialogContent>
             <DialogActions>
                 <Button autoFocus onClick={handleCloseKrea}>
                 Cancel
                 </Button>
-                <Button onClick={handleCloseKrea}>Subscribe</Button>
             </DialogActions>
             </Dialog>
             
